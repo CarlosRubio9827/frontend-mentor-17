@@ -1,0 +1,65 @@
+@import '../App/App.scss';
+
+.containerC{
+    width: 100vw;
+    // height: 250px;
+    max-height: 400px;
+	scroll-behavior: smooth;
+    position: relative;
+    overflow: hidden;
+    &-carousel{
+        display: flex;
+        height: 100%;
+        flex-wrap: nowrap;
+        width: 400%;
+        
+        position: relative;
+        // overflow-x: scroll;
+        // overscroll-behavior-x: contain;
+        // scroll-snap-type: x proximity;
+        transition: all .3s ease;
+        transform: translateX(0%);
+        
+        &-item{
+            height: 100%;
+            width: (100% / 4);
+            & a{
+
+                & img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+            & a:hover{
+                cursor: default;
+            }
+        }
+    }
+    &-arrow{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 2;
+        background: $Lightgrayishblue;
+        & img{
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    &-arrow:hover{
+        cursor: pointer;
+    }
+    &-left{
+        left: 20px;
+    }
+    &-right{
+        right: 20px;
+    }
+}
