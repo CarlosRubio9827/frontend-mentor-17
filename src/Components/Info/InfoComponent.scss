@@ -10,17 +10,17 @@
     justify-content: space-between;
     padding: 15px 15px 40px 15px;   
 
-    & p:nth-child(1){
+    &-subtitle{
         color: $Orange;
         font-weight: bold;
         font-size: 18px;
     }
-    & h3{
+    &-title{
         color: $Veryvarkblue;
         font-size: 24px;
         line-height: 24px;
     }
-    & p:nth-child(3){
+    &-description{
         color: $Darkgrayishblue;
         font-size: 16px;
         padding: 20px 0 0 0;
@@ -71,6 +71,7 @@
             color: $Orange;
             font-weight: bold;
             font-size: 20px;
+            cursor: pointer;
         }
         & p{
             color: $Black;
@@ -91,6 +92,68 @@
             border: none;
             border-radius: 20px;
             box-shadow: 0px 10px 10px 0px rgba($Orange, 0.3);
+            display: flex;  
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 0 30%;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .info-container{
+        grid-column: 2/3;
+        width: 50vw;
+        max-height: 400px;
+        padding: 30px;
+        align-self: center;
+        justify-self: flex-start;
+        align-self: center;
+        position: relative;
+        &-subtitle{
+            font-size: 1.4rem;
+        }
+        &-title{
+            font-size: 2.8rem;
+            padding-right: 10px;
+            line-height: 25px;
+        }
+        &-description{
+            font-size: 1.4rem;
+            line-height: 20px;
+        }
+        &-price{
+            width: 50%;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            & p:nth-child(1){
+                font-weight: bold;
+            }
+            & p:nth-child(3){
+                justify-self: flex-start;
+            }
+        }
+        &-amount{
+            width: 35%;
+        }
+        &-cart{
+            position: absolute;
+            margin: 0;
+            width: 50%;
+            bottom: 30px;
+            left: 45%;
+            border-radius: 10px;
+            &:hover{
+                opacity: 0.5;
+                
+            }
+            & button{
+                cursor: pointer;
+                border-radius: 10px;
+                box-shadow: 0px 10px 15px 0px rgba(255, 125, 26,0.3);
+                padding: 0;
+            }
         }
     }
 }

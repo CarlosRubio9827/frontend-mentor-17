@@ -5,6 +5,7 @@
  import {TopImgComponent} from '../TopImg/TopImgComponent'
  import {ShoppingCartComponent} from '../ShoopingCar/ShoppingCartComponent'
  import { SideMenuComponent } from '../SideMenu/SideMenuComponent'
+ import { CarouselComponent } from '../Carousel/CarouselComponent'
 import './App.scss'
 
  function AppUI(){
@@ -13,7 +14,10 @@ import './App.scss'
      openSideMenu,
      setSideMenu,
      openCarousel,
-     setCarousel} = React.useContext(Context)
+     setCarousel,
+     changeAmount,
+    setChangeAmount,
+    } = React.useContext(Context)
      return (
          <React.Fragment>
              <div className="container">
@@ -27,12 +31,26 @@ import './App.scss'
                 }
                 {openSideMenu && (
                     <SideMenuComponent 
-                        setSideMenu={setSideMenu}    
+                    setSideMenu={setSideMenu}    
+                    
                     />
                     )
                 }
-                <TopImgComponent />
-                <InfoComponent />
+                <TopImgComponent
+                    setCarousel={setCarousel}
+                />
+                <InfoComponent 
+                    setChangeAmount={setChangeAmount}
+                    changeAmount={changeAmount}
+                    
+                />
+                {openCarousel && (
+                    <CarouselComponent
+                        setCarousel={setCarousel}
+                    />
+                    )
+                }
+                
              </div>
          </React.Fragment>
      )

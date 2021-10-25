@@ -82,6 +82,9 @@
                     color: $Veryvarkblue;
                 }
             }
+            &-trash{
+                cursor: pointer;
+            }
         }
         &-checkout{
             width: 100%;
@@ -94,6 +97,41 @@
                 border-radius: 10px;
                 color: white;
                 font-weight: bold;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .cart-container{
+        width: 250px;
+        box-shadow: 10px 10px 20px 5px rgba($Black, 0.2);
+        right: calc(10% - 50px);
+        left: auto;
+        top: 82px;
+        &-top::after{
+            width: 250px;
+            left: -15px;
+            
+        }
+        &-button{
+            &-info{
+                &-img{
+                    height: auto;
+                }
+                &-description{
+                    & p:nth-child(1){
+                        font-size: 1.2rem;
+                    }
+                    & p:nth-child(2){
+                        font-size: 1rem;
+                    }
+                    & p:nth-child(3){
+                        font-size: 1rem;
+                    }
+                }
             }
         }
     }
